@@ -5,74 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Community Events in Iowa City | 3rd Space</title>
 <meta name="description" content="Weekly community events at 3rd Space in Iowa City: open mics, story time, language swaps, and more.">
-<style>
-:root{--green:#19c37d;--blue:#2f80ff;--pink:#ff4fa3;--purple:#8a4dff;--ink:#1d1b3a;--bg:#fffaf3;--card:#ffffff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Trebuchet MS",Verdana,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
-h1,h2,h3{line-height:1.15;margin:0 0 .5rem}
-h1{font-size:clamp(2.2rem,7vw,4rem)}
-h2{font-size:clamp(1.6rem,4.5vw,2.4rem)}
-p{margin:0 0 1rem;overflow-wrap:break-word}
-a{color:var(--blue)}
-.notice{background:var(--ink);color:#fff;text-align:center;padding:.65rem 1rem;font-size:.85rem}
-header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:5px solid var(--green);border-image:linear-gradient(90deg,var(--green),var(--blue),var(--purple),var(--pink)) 1}
-.bar{max-width:1100px;margin:0 auto;padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-.logo{font-size:1.6rem;font-weight:800;text-decoration:none;color:var(--purple)}
-.logo span{color:var(--pink)}
-nav{display:flex;flex-wrap:wrap;gap:.4rem}
-nav a{text-decoration:none;color:var(--ink);font-weight:700;padding:.5rem .9rem;border-radius:999px;transition:.2s}
-nav a:nth-child(1):hover,nav a:nth-child(1)[aria-current]{background:var(--green);color:#fff}
-nav a:nth-child(2):hover,nav a:nth-child(2)[aria-current]{background:var(--blue);color:#fff}
-nav a:nth-child(3):hover,nav a:nth-child(3)[aria-current]{background:var(--purple);color:#fff}
-nav a:nth-child(4):hover,nav a:nth-child(4)[aria-current]{background:var(--pink);color:#fff}
-.toggle{display:none;background:var(--purple);color:#fff;border:0;border-radius:10px;padding:.5rem .9rem;font-size:1rem;font-weight:700;cursor:pointer}
-.hero{background:linear-gradient(135deg,var(--purple),var(--blue) 50%,var(--green));color:#fff;padding:3.5rem 1rem;text-align:center}
-.hero.pink{background:linear-gradient(135deg,var(--pink),var(--purple))}
-.hero.blue{background:linear-gradient(135deg,var(--blue),var(--green))}
-.hero.green{background:linear-gradient(135deg,var(--green),var(--blue))}
-.hero .in{max-width:760px;margin:0 auto}
-.hero p{font-size:1.15rem}
-.btn{display:inline-block;background:#fff;color:var(--purple);font-weight:800;text-decoration:none;padding:.8rem 1.5rem;border-radius:999px;border:0;cursor:pointer;font-size:1rem;margin:.25rem;transition:transform .2s,box-shadow .2s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.2)}
-.btn.pinkbtn{background:var(--pink);color:#fff}
-main{max-width:1100px;margin:0 auto;padding:2.5rem 1rem}
-section{margin-bottom:3rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
-.card{background:var(--card);border-radius:18px;padding:1.4rem;border-top:8px solid var(--green);box-shadow:0 4px 14px rgba(29,27,58,.1);transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(29,27,58,.18)}
-.card:nth-child(4n+2){border-top-color:var(--blue)}
-.card:nth-child(4n+3){border-top-color:var(--purple)}
-.card:nth-child(4n+4){border-top-color:var(--pink)}
-.tag{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:#efe9ff;color:var(--purple);padding:.2rem .6rem;border-radius:999px;margin-bottom:.5rem}
-.price{float:right;font-weight:800;color:var(--pink)}
-.status{display:inline-block;background:#fff;color:var(--ink);padding:.4rem 1rem;border-radius:999px;font-weight:800;margin-top:.5rem}
-.dot{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;background:#aaa;margin-right:.4rem}
-.dot.open{background:var(--green)}
-.dot.closed{background:var(--pink)}
-.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
-.pill{border:2px solid var(--purple);background:#fff;color:var(--purple);font-weight:800;padding:.5rem 1rem;border-radius:999px;cursor:pointer;font-size:.95rem;transition:.2s}
-.pill:hover{background:#efe9ff}
-.pill.on{background:var(--purple);color:#fff}
-.panel{background:#fff;border-radius:18px;padding:1.5rem;border-left:8px solid var(--pink);box-shadow:0 4px 14px rgba(29,27,58,.1)}
-.band{background:#fff;border-radius:22px;padding:1.5rem;box-shadow:0 4px 14px rgba(29,27,58,.1)}
-table{width:100%;border-collapse:collapse}
-td,th{text-align:left;padding:.6rem;border-bottom:2px solid #f0e8ff}
-.scroll{overflow-x:auto}
-footer{background:var(--ink);color:#fff;padding:2rem 1rem;text-align:center}
-footer .fn{max-width:760px;margin:0 auto 1rem;font-size:.9rem}
-footer nav{justify-content:center;margin-bottom:1rem}
-footer nav a{color:#fff}
-footer small{opacity:.8}
-.hide{display:none!important}
-@media(max-width:720px){
-.js .toggle{display:inline-block}
-.js nav{display:none;width:100%;flex-direction:column}
-.js nav.open{display:flex}
-nav a{background:#f6f1ff;text-align:center}
-.hero{padding:2.5rem 1rem}
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
@@ -89,8 +23,9 @@ nav a{background:#f6f1ff;text-align:center}
 </div>
 </header>
 
-<div class="hero blue">
+<div class="hero">
 <div class="in">
+<div class="art" aria-hidden="true">🎸 📚 🎨 🗣️</div>
 <h1>Community Events in Iowa City</h1>
 <p>Every week, 3rd Space opens its tables, its stage, and its couches to the neighborhood. All events are free to attend, and everyone is welcome.</p>
 </div>
@@ -107,17 +42,16 @@ nav a{background:#f6f1ff;text-align:center}
 <button class="pill" data-filter="family">Family &amp; Kids</button>
 <button class="pill" data-filter="social">Social</button>
 </div>
-<div class="grid" id="items">
-<div class="card" data-cat="music"><span class="tag">Music &amp; Arts</span><h3>Open Mic Night</h3><p><strong>Every Thursday, 7:00 PM</strong></p><p>Sing, read poetry, tell a story, or just cheer. Sign up at the counter when you arrive. Hosted by Priya.</p></div>
-<div class="card" data-cat="family"><span class="tag">Family &amp; Kids</span><h3>Story Time and Hot Cocoa</h3><p><strong>Every Saturday, 10:00 AM</strong></p><p>Picture books, silly voices, and kid-size cocoa for ages 3 to 7. Grown-ups get a free drip coffee.</p></div>
-<div class="card" data-cat="learn"><span class="tag">Learning</span><h3>Language Swap Table</h3><p><strong>Every Tuesday, 6:30 PM</strong></p><p>Practice Spanish, Arabic, Mandarin, French, or English with friendly neighbors. Beginners are very welcome.</p></div>
-<div class="card" data-cat="social"><span class="tag">Social</span><h3>Trivia Night</h3><p><strong>Every Wednesday, 7:30 PM</strong></p><p>Teams of up to five compete for bragging rights and a free pastry for the winning table.</p></div>
-<div class="card" data-cat="learn"><span class="tag">Learning</span><h3>Home Barista Workshop</h3><p><strong>First Sunday of the month, 2:00 PM</strong></p><p>Theo teaches pour-over, milk steaming, and latte art basics. Small groups, and everyone tastes as they learn.</p></div>
-<div class="card" data-cat="social"><span class="tag">Social</span><h3>Silent Book Club</h3><p><strong>Every Monday, 6:00 PM</strong></p><p>Bring a book, grab a drink, and read together in good company. Chat afterward if you like.</p></div>
-<div class="card" data-cat="music"><span class="tag">Music &amp; Arts</span><h3>Sketch and Sip</h3><p><strong>Second Friday of the month, 6:00 PM</strong></p><p>Supplies provided. No experience needed. Draw from a new still life each month and keep your art.</p></div>
-<div class="card" data-cat="family"><span class="tag">Family &amp; Kids</span><h3>Teen Study Hall</h3><p><strong>Sunday through Thursday, 4:00 PM</strong></p><p>A quiet corner with free Wi-Fi, snacks, and volunteer tutors for high school students.</p></div>
+<div class="grid">
+<div class="card" data-cat="music"><span class="pic wide" aria-hidden="true">🎤</span><span class="tag">Music &amp; Arts</span><h3>Open Mic Night</h3><p><strong>Every Thursday, 7:00 PM</strong></p><p>Sing, read poetry, tell a story, or just cheer. Sign up at the counter when you arrive. Hosted by Priya.</p></div>
+<div class="card" data-cat="family"><span class="pic wide" aria-hidden="true">📖</span><span class="tag">Family &amp; Kids</span><h3>Story Time and Hot Cocoa</h3><p><strong>Every Saturday, 10:00 AM</strong></p><p>Picture books, silly voices, and kid-size cocoa for ages 3 to 7. Grown-ups get a free drip coffee.</p></div>
+<div class="card" data-cat="learn"><span class="pic wide" aria-hidden="true">🗣️</span><span class="tag">Learning</span><h3>Language Swap Table</h3><p><strong>Every Tuesday, 6:30 PM</strong></p><p>Practice Spanish, Arabic, Mandarin, French, or English with friendly neighbors. Beginners are very welcome.</p></div>
+<div class="card" data-cat="social"><span class="pic wide" aria-hidden="true">🧠</span><span class="tag">Social</span><h3>Trivia Night</h3><p><strong>Every Wednesday, 7:30 PM</strong></p><p>Teams of up to five compete for bragging rights and a free pastry for the winning table.</p></div>
+<div class="card" data-cat="learn"><span class="pic wide" aria-hidden="true">☕</span><span class="tag">Learning</span><h3>Home Barista Workshop</h3><p><strong>First Sunday of the month, 2:00 PM</strong></p><p>Theo teaches pour-over, milk steaming, and latte art basics. Small groups, and everyone tastes as they learn.</p></div>
+<div class="card" data-cat="social"><span class="pic wide" aria-hidden="true">📚</span><span class="tag">Social</span><h3>Silent Book Club</h3><p><strong>Every Monday, 6:00 PM</strong></p><p>Bring a book, grab a drink, and read together in good company. Chat afterward if you like.</p></div>
+<div class="card" data-cat="music"><span class="pic wide" aria-hidden="true">🎨</span><span class="tag">Music &amp; Arts</span><h3>Sketch and Sip</h3><p><strong>Second Friday of the month, 6:00 PM</strong></p><p>Supplies provided. No experience needed. Draw from a new still life each month and keep your art.</p></div>
+<div class="card" data-cat="family"><span class="pic wide" aria-hidden="true">✏️</span><span class="tag">Family &amp; Kids</span><h3>Teen Study Hall</h3><p><strong>Sunday through Thursday, 4:00 PM</strong></p><p>A quiet corner with free Wi-Fi, snacks, and volunteer tutors for high school students.</p></div>
 </div>
-<p id="empty" class="hide">No events match that filter yet. Try another category.</p>
 </section>
 
 <section>
@@ -139,27 +73,5 @@ nav a{background:#f6f1ff;text-align:center}
 </nav>
 <small>3rd Space &bull; 218 Dubuque Street, Iowa City, Iowa &bull; Fictional address</small>
 </footer>
-
-<script>
-document.documentElement.classList.add('js');
-var t=document.getElementById('toggle'),n=document.getElementById('nav');
-t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o);});
-
-// Event filter
-var btns=document.querySelectorAll('#filters .pill'),items=document.querySelectorAll('#items .card');
-btns.forEach(function(b){
-b.addEventListener('click',function(){
-btns.forEach(function(x){x.classList.remove('on')});
-b.classList.add('on');
-var f=b.dataset.filter,shown=0;
-items.forEach(function(c){
-var show=f==='all'||c.dataset.cat===f;
-c.classList.toggle('hide',!show);
-if(show)shown++;
-});
-document.getElementById('empty').classList.toggle('hide',shown>0);
-});
-});
-</script>
 </body>
 </html>
