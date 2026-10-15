@@ -4,75 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>3rd Space Menu | Coffee, Breakfast &amp; Lunch in Iowa City</title>
-<meta name="description" content="The 3rd Space menu: espresso drinks, tea, breakfast, lunch, and sweets, with vegan and gluten-free options.">
-<style>
-:root{--green:#19c37d;--blue:#2f80ff;--pink:#ff4fa3;--purple:#8a4dff;--ink:#1d1b3a;--bg:#fffaf3;--card:#ffffff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Trebuchet MS",Verdana,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
-h1,h2,h3{line-height:1.15;margin:0 0 .5rem}
-h1{font-size:clamp(2.2rem,7vw,4rem)}
-h2{font-size:clamp(1.6rem,4.5vw,2.4rem)}
-p{margin:0 0 1rem;overflow-wrap:break-word}
-a{color:var(--blue)}
-.notice{background:var(--ink);color:#fff;text-align:center;padding:.65rem 1rem;font-size:.85rem}
-header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:5px solid var(--green);border-image:linear-gradient(90deg,var(--green),var(--blue),var(--purple),var(--pink)) 1}
-.bar{max-width:1100px;margin:0 auto;padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-.logo{font-size:1.6rem;font-weight:800;text-decoration:none;color:var(--purple)}
-.logo span{color:var(--pink)}
-nav{display:flex;flex-wrap:wrap;gap:.4rem}
-nav a{text-decoration:none;color:var(--ink);font-weight:700;padding:.5rem .9rem;border-radius:999px;transition:.2s}
-nav a:nth-child(1):hover,nav a:nth-child(1)[aria-current]{background:var(--green);color:#fff}
-nav a:nth-child(2):hover,nav a:nth-child(2)[aria-current]{background:var(--blue);color:#fff}
-nav a:nth-child(3):hover,nav a:nth-child(3)[aria-current]{background:var(--purple);color:#fff}
-nav a:nth-child(4):hover,nav a:nth-child(4)[aria-current]{background:var(--pink);color:#fff}
-.toggle{display:none;background:var(--purple);color:#fff;border:0;border-radius:10px;padding:.5rem .9rem;font-size:1rem;font-weight:700;cursor:pointer}
-.hero{background:linear-gradient(135deg,var(--purple),var(--blue) 50%,var(--green));color:#fff;padding:3.5rem 1rem;text-align:center}
-.hero.pink{background:linear-gradient(135deg,var(--pink),var(--purple))}
-.hero.blue{background:linear-gradient(135deg,var(--blue),var(--green))}
-.hero.green{background:linear-gradient(135deg,var(--green),var(--blue))}
-.hero .in{max-width:760px;margin:0 auto}
-.hero p{font-size:1.15rem}
-.btn{display:inline-block;background:#fff;color:var(--purple);font-weight:800;text-decoration:none;padding:.8rem 1.5rem;border-radius:999px;border:0;cursor:pointer;font-size:1rem;margin:.25rem;transition:transform .2s,box-shadow .2s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.2)}
-.btn.pinkbtn{background:var(--pink);color:#fff}
-main{max-width:1100px;margin:0 auto;padding:2.5rem 1rem}
-section{margin-bottom:3rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
-.card{background:var(--card);border-radius:18px;padding:1.4rem;border-top:8px solid var(--green);box-shadow:0 4px 14px rgba(29,27,58,.1);transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(29,27,58,.18)}
-.card:nth-child(4n+2){border-top-color:var(--blue)}
-.card:nth-child(4n+3){border-top-color:var(--purple)}
-.card:nth-child(4n+4){border-top-color:var(--pink)}
-.tag{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:#efe9ff;color:var(--purple);padding:.2rem .6rem;border-radius:999px;margin-bottom:.5rem}
-.price{float:right;font-weight:800;color:var(--pink)}
-.status{display:inline-block;background:#fff;color:var(--ink);padding:.4rem 1rem;border-radius:999px;font-weight:800;margin-top:.5rem}
-.dot{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;background:#aaa;margin-right:.4rem}
-.dot.open{background:var(--green)}
-.dot.closed{background:var(--pink)}
-.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
-.pill{border:2px solid var(--purple);background:#fff;color:var(--purple);font-weight:800;padding:.5rem 1rem;border-radius:999px;cursor:pointer;font-size:.95rem;transition:.2s}
-.pill:hover{background:#efe9ff}
-.pill.on{background:var(--purple);color:#fff}
-.panel{background:#fff;border-radius:18px;padding:1.5rem;border-left:8px solid var(--pink);box-shadow:0 4px 14px rgba(29,27,58,.1)}
-.band{background:#fff;border-radius:22px;padding:1.5rem;box-shadow:0 4px 14px rgba(29,27,58,.1)}
-table{width:100%;border-collapse:collapse}
-td,th{text-align:left;padding:.6rem;border-bottom:2px solid #f0e8ff}
-.scroll{overflow-x:auto}
-footer{background:var(--ink);color:#fff;padding:2rem 1rem;text-align:center}
-footer .fn{max-width:760px;margin:0 auto 1rem;font-size:.9rem}
-footer nav{justify-content:center;margin-bottom:1rem}
-footer nav a{color:#fff}
-footer small{opacity:.8}
-.hide{display:none!important}
-@media(max-width:720px){
-.js .toggle{display:inline-block}
-.js nav{display:none;width:100%;flex-direction:column}
-.js nav.open{display:flex}
-nav a{background:#f6f1ff;text-align:center}
-.hero{padding:2.5rem 1rem}
-}
-</style>
+<meta name="description" content="The 3rd Space menu: espresso drinks, seasonal lattes, tea, breakfast, wraps, salads, soups, and sweets, with vegan and gluten-free options.">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
@@ -89,48 +23,141 @@ nav a{background:#f6f1ff;text-align:center}
 </div>
 </header>
 
-<div class="hero green">
+<div class="hero">
 <div class="in">
+<div class="art" aria-hidden="true">☕ 🍂 🥐 🥗 🍵</div>
 <h1>The 3rd Space Menu</h1>
 <p>Coffee, tea, breakfast, lunch, and sweets, all made fresh every morning. Tap a category to jump to what you're craving.</p>
 </div>
 </div>
 
 <main>
-<section>
+<div class="filters">
 <div class="pills" id="filters">
 <button class="pill on" data-filter="all">Everything</button>
 <button class="pill" data-filter="coffee">Coffee</button>
-<button class="pill" data-filter="tea">Tea &amp; Other Drinks</button>
+<button class="pill" data-filter="seasonal">Seasonal Lattes</button>
+<button class="pill" data-filter="extras">Syrups &amp; Add-Ons</button>
+<button class="pill" data-filter="tea">Tea</button>
 <button class="pill" data-filter="breakfast">Breakfast</button>
 <button class="pill" data-filter="lunch">Lunch</button>
 <button class="pill" data-filter="sweet">Sweets</button>
 </div>
-<p><strong>V</strong> = vegan &nbsp; <strong>GF</strong> = gluten-free &nbsp; Oat, almond, and soy milk are always free to substitute.</p>
-
-<div class="grid" id="items">
-<div class="card" data-cat="coffee"><span class="tag">Coffee</span><span class="price">$3.25</span><h3>Espresso</h3><p>A double shot of Sunrise Blend, rich and syrupy. <strong>V, GF</strong></p></div>
-<div class="card" data-cat="coffee"><span class="tag">Coffee</span><span class="price">$4.50</span><h3>Cortado</h3><p>Equal parts espresso and steamed milk. Small, strong, and smooth.</p></div>
-<div class="card" data-cat="coffee"><span class="tag">Coffee</span><span class="price">$5.25</span><h3>Lavender Honey Latte</h3><p>Espresso, steamed milk, house lavender syrup, and local-style honey.</p></div>
-<div class="card" data-cat="coffee"><span class="tag">Coffee</span><span class="price">$5.50</span><h3>Unicorn Cold Foam Cold Brew</h3><p>18-hour cold brew topped with pink vanilla cold foam. Our most photographed drink.</p></div>
-<div class="card" data-cat="coffee"><span class="tag">Coffee</span><span class="price">$3.00</span><h3>Batch Drip</h3><p>Our everyday cup, brewed fresh every 30 minutes. <strong>V, GF</strong></p></div>
-<div class="card" data-cat="tea"><span class="tag">Tea &amp; Other</span><span class="price">$4.25</span><h3>Blueberry Mint Lemonade</h3><p>Fresh lemon, muddled blueberries, and mint over ice. Caffeine-free. <strong>V, GF</strong></p></div>
-<div class="card" data-cat="tea"><span class="tag">Tea &amp; Other</span><span class="price">$4.75</span><h3>Purple Haze Chai</h3><p>Spiced black tea with steamed milk and a touch of butterfly pea flower.</p></div>
-<div class="card" data-cat="tea"><span class="tag">Tea &amp; Other</span><span class="price">$3.50</span><h3>Hot Tea Pot</h3><p>Choose from green jasmine, peppermint, or English breakfast. <strong>V, GF</strong></p></div>
-<div class="card" data-cat="tea"><span class="tag">Tea &amp; Other</span><span class="price">$3.75</span><h3>Kids' Cocoa</h3><p>Steamed milk and rich chocolate, served warm, not hot, with whipped cream.</p></div>
-<div class="card" data-cat="breakfast"><span class="tag">Breakfast</span><span class="price">$7.50</span><h3>Sunrise Egg Sandwich</h3><p>Scrambled egg, cheddar, and spinach on a toasted brioche bun. Add bacon for $1.50.</p></div>
-<div class="card" data-cat="breakfast"><span class="tag">Breakfast</span><span class="price">$6.50</span><h3>Avocado Toast</h3><p>Smashed avocado, lemon, chili flakes, and seeds on thick sourdough. <strong>V</strong></p></div>
-<div class="card" data-cat="breakfast"><span class="tag">Breakfast</span><span class="price">$5.75</span><h3>Berry Yogurt Parfait</h3><p>Greek yogurt, house granola, and fresh berries. <strong>GF</strong></p></div>
-<div class="card" data-cat="lunch"><span class="tag">Lunch</span><span class="price">$10.50</span><h3>Green Goddess Wrap</h3><p>Hummus, cucumber, roasted peppers, greens, and herb dressing in a spinach wrap. <strong>V</strong></p></div>
-<div class="card" data-cat="lunch"><span class="tag">Lunch</span><span class="price">$11.50</span><h3>Turkey Pesto Melt</h3><p>Roasted turkey, basil pesto, provolone, and tomato on grilled ciabatta.</p></div>
-<div class="card" data-cat="lunch"><span class="tag">Lunch</span><span class="price">$9.75</span><h3>Harvest Grain Bowl</h3><p>Quinoa, roasted sweet potato, kale, chickpeas, and tahini dressing. <strong>V, GF</strong></p></div>
-<div class="card" data-cat="lunch"><span class="tag">Lunch</span><span class="price">$5.50</span><h3>Tomato Basil Soup</h3><p>Slow-simmered and served with a toasted bread slice. Soup changes every Friday. <strong>V</strong></p></div>
-<div class="card" data-cat="sweet"><span class="tag">Sweets</span><span class="price">$4.00</span><h3>Cardamom Roll</h3><p>Soft, sticky, and spiced. Baked each morning and gone by afternoon.</p></div>
-<div class="card" data-cat="sweet"><span class="tag">Sweets</span><span class="price">$3.50</span><h3>Double Chocolate Cookie</h3><p>Crisp edges, gooey middle, and flaky sea salt on top.</p></div>
-<div class="card" data-cat="sweet"><span class="tag">Sweets</span><span class="price">$4.25</span><h3>Lemon Blueberry Loaf</h3><p>Moist, bright, and finished with a sweet lemon glaze.</p></div>
-<div class="card" data-cat="sweet"><span class="tag">Sweets</span><span class="price">$3.75</span><h3>Flourless Brownie</h3><p>Dense, fudgy, and made without wheat. <strong>GF</strong></p></div>
 </div>
-<p id="empty" class="hide">Nothing here yet. Try another category.</p>
+<p><strong>V</strong> = vegan &nbsp; <strong>GF</strong> = gluten-free &nbsp; Oat, almond, soy, and coconut milk are available for $0.75.</p>
+
+<section class="cat" data-cat="coffee">
+<h2>☕ Coffee</h2>
+<div class="items">
+<article class="item"><span class="pic" aria-hidden="true">☕</span><div><b>Espresso</b><em>$3.25</em><p>A double shot of Sunrise Blend, rich and syrupy. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🫗</span><div><b>Americano</b><em>$3.75</em><p>Espresso topped with hot water for a long, smooth cup. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥛</span><div><b>Cortado</b><em>$4.50</em><p>Equal parts espresso and steamed milk. Small, strong, and smooth.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">☁️</span><div><b>Cappuccino</b><em>$4.75</em><p>Espresso under a thick cloud of velvety foam.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🤍</span><div><b>Flat White</b><em>$4.95</em><p>Double ristretto with silky microfoam and a bold finish.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🧊</span><div><b>Iced Latte</b><em>$5.00</em><p>Espresso and cold milk over ice. Add any syrup you like.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍫</span><div><b>Mocha</b><em>$5.25</em><p>Espresso, steamed milk, and dark chocolate sauce.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌙</span><div><b>Cold Brew</b><em>$4.75</em><p>Steeped 18 hours. Smooth, low acid, and naturally sweet. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🦄</span><div><b>Unicorn Cold Foam Cold Brew</b><em>$5.50</em><p>Cold brew topped with pink vanilla cold foam. Our most photographed drink.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🫖</span><div><b>Pour-Over</b><em>$4.50</em><p>Hand-poured single origin, chosen by Theo each week. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🫘</span><div><b>Batch Drip</b><em>$3.00</em><p>Our everyday cup, brewed fresh every 30 minutes. V, GF</p></div></article>
+</div>
+</section>
+
+<section class="cat" data-cat="seasonal">
+<h2>🍂 Seasonal Lattes</h2>
+<p class="note">These rotate with the seasons. Fall favorites are on right now.</p>
+<div class="items">
+<article class="item"><span class="pic" aria-hidden="true">🍁</span><div><b>Maple Pecan Latte</b><em>$5.75</em><p>Espresso, steamed milk, real maple, and toasted pecan crumble. Fall</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🎃</span><div><b>Pumpkin Brown Sugar Latte</b><em>$5.75</em><p>Pumpkin, brown sugar, and warm spices with whipped cream. Fall</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍎</span><div><b>Caramel Apple Latte</b><em>$5.75</em><p>Baked apple syrup, salted caramel, and a cinnamon dusting. Fall</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍬</span><div><b>Peppermint Mocha</b><em>$5.75</em><p>Dark chocolate, cool peppermint, and whipped cream. Winter</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌸</span><div><b>Lavender Honey Latte</b><em>$5.50</em><p>House lavender syrup and golden honey. Spring</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌼</span><div><b>Honeysuckle Iced Latte</b><em>$5.50</em><p>Light floral sweetness over ice and cold espresso. Summer</p></div></article>
+</div>
+</section>
+
+<section class="cat" data-cat="extras">
+<h2>🍯 Syrups &amp; Add-Ons</h2>
+<p class="note">Add any syrup to any drink for $0.75. All syrups are made in-house, and most are vegan.</p>
+<div class="items">
+<article class="item"><span class="pic" aria-hidden="true">🍯</span><div><b>Syrups</b><p class="chips"><span>Vanilla</span><span>Caramel</span><span>Hazelnut</span><span>Brown Sugar Cinnamon</span><span>Lavender</span><span>Honey</span><span>Maple</span><span>Cardamom</span><span>Coconut</span><span>Mint</span><span>Sugar-Free Vanilla</span></p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥥</span><div><b>Milk Choices</b><em>$0.75</em><p class="chips"><span>Whole</span><span>Oat</span><span>Almond</span><span>Soy</span><span>Coconut</span></p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">⚡</span><div><b>Extras</b><p class="chips"><span>Extra shot $1.00</span><span>Cold foam $1.00</span><span>Whipped cream $0.50</span><span>Decaf shot free</span></p></div></article>
+</div>
+</section>
+
+<section class="cat" data-cat="tea">
+<h2>🍵 Tea &amp; Other Drinks</h2>
+<div class="items">
+<article class="item"><span class="pic" aria-hidden="true">🍃</span><div><b>Green Jasmine Tea</b><em>$3.50</em><p>Fragrant, light, and gently grassy. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌿</span><div><b>Peppermint Tea</b><em>$3.50</em><p>Cool, clean, and caffeine-free. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🫖</span><div><b>English Breakfast</b><em>$3.50</em><p>Robust black tea, lovely with milk. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌸</span><div><b>Earl Grey</b><em>$3.50</em><p>Black tea with bright bergamot and cornflower. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌼</span><div><b>Chamomile Honey</b><em>$3.75</em><p>Soothing chamomile with a spoonful of honey. Caffeine-free. GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">💚</span><div><b>Matcha Latte</b><em>$5.25</em><p>Ceremonial matcha whisked with steamed milk. Served hot or iced.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">💜</span><div><b>Purple Haze Chai</b><em>$4.75</em><p>Spiced black tea, steamed milk, and butterfly pea flower.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌫️</span><div><b>London Fog</b><em>$4.75</em><p>Earl Grey, vanilla syrup, and steamed milk.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🧊</span><div><b>Hibiscus Iced Tea</b><em>$3.95</em><p>Tart, ruby-red, and refreshing. Caffeine-free. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🫐</span><div><b>Blueberry Mint Lemonade</b><em>$4.25</em><p>Fresh lemon, muddled blueberries, and mint over ice. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍫</span><div><b>Kids' Cocoa</b><em>$3.75</em><p>Steamed milk and rich chocolate, served warm with whipped cream.</p></div></article>
+</div>
+</section>
+
+<section class="cat" data-cat="breakfast">
+<h2>🥐 Breakfast</h2>
+<p class="note">Served all day. Pastries are baked fresh each morning.</p>
+<div class="items">
+<h3 class="sub">Muffins &amp; Croissants</h3>
+<article class="item"><span class="pic" aria-hidden="true">🫐</span><div><b>Blueberry Muffin</b><em>$3.75</em><p>Bursting with berries and topped with sugar crumble.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍌</span><div><b>Banana Walnut Muffin</b><em>$3.75</em><p>Moist, spiced, and full of toasted walnuts.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍋</span><div><b>Lemon Poppy Seed Muffin</b><em>$3.75</em><p>Bright and tender with a light citrus glaze.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥐</span><div><b>Butter Croissant</b><em>$3.50</em><p>Flaky, golden, and buttery. Baked fresh each morning.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌰</span><div><b>Almond Croissant</b><em>$4.50</em><p>Filled with almond cream and topped with sliced almonds.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🧀</span><div><b>Ham &amp; Swiss Croissant</b><em>$6.75</em><p>Warm croissant with sliced ham, Swiss, and Dijon.</p></div></article>
+<h3 class="sub">Breakfast Sandwiches</h3>
+<article class="item"><span class="pic" aria-hidden="true">🍳</span><div><b>Sunrise Egg Sandwich</b><em>$7.50</em><p>Scrambled egg, cheddar, and spinach on toasted brioche. Add bacon for $1.50.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥯</span><div><b>Bacon, Egg &amp; Cheddar Bagel</b><em>$8.25</em><p>Crispy bacon, fried egg, and sharp cheddar on a toasted bagel.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥬</span><div><b>Garden Veggie Sandwich</b><em>$7.95</em><p>Egg, roasted peppers, tomato, spinach, and herbed cream cheese on a bagel.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌭</span><div><b>Sausage Biscuit Sandwich</b><em>$7.95</em><p>Savory sausage patty, egg, and cheese on a buttermilk biscuit.</p></div></article>
+<h3 class="sub">Lighter Starts</h3>
+<article class="item"><span class="pic" aria-hidden="true">🥑</span><div><b>Avocado Toast</b><em>$6.50</em><p>Smashed avocado, lemon, chili flakes, and seeds on thick sourdough. V</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍓</span><div><b>Berry Yogurt Parfait</b><em>$5.75</em><p>Greek yogurt, house granola, and fresh berries. GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥣</span><div><b>Brown Sugar Oatmeal</b><em>$4.95</em><p>Steel-cut oats with brown sugar, cinnamon, and toasted nuts. V, GF</p></div></article>
+</div>
+</section>
+
+<section class="cat" data-cat="lunch">
+<h2>🥗 Lunch</h2>
+<p class="note">Served from 11:00 AM until close.</p>
+<div class="items">
+<h3 class="sub">Our Signature</h3>
+<article class="item star"><span class="pic" aria-hidden="true">⭐</span><div><b>The Third Space Melt</b><em>$12.50</em><p>Our classic, found only here: roasted turkey, basil pesto, provolone, and fig jam on grilled ciabatta, served with a pickle spear and kettle chips.</p></div></article>
+<h3 class="sub">Wraps</h3>
+<article class="item"><span class="pic" aria-hidden="true">🌯</span><div><b>Green Goddess Wrap</b><em>$10.50</em><p>Hummus, cucumber, roasted peppers, greens, and herb dressing in a spinach wrap. V</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍗</span><div><b>Chicken Caesar Wrap</b><em>$11.25</em><p>Grilled chicken, romaine, parmesan, and creamy Caesar in a flour wrap.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🌶️</span><div><b>Southwest Black Bean Wrap</b><em>$10.50</em><p>Black beans, corn, avocado, rice, and chipotle sauce. V</p></div></article>
+<h3 class="sub">Salads</h3>
+<article class="item"><span class="pic" aria-hidden="true">🥬</span><div><b>Kale Caesar Salad</b><em>$10.25</em><p>Tuscan kale, shaved parmesan, garlic crumbs, and lemon dressing.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍓</span><div><b>Strawberry Spinach Salad</b><em>$10.50</em><p>Baby spinach, strawberries, goat cheese, pecans, and poppy seed dressing. GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥙</span><div><b>Mediterranean Chickpea Salad</b><em>$10.25</em><p>Chickpeas, cucumber, tomato, olives, and lemon-herb dressing. V, GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍠</span><div><b>Harvest Grain Bowl</b><em>$9.75</em><p>Quinoa, roasted sweet potato, kale, chickpeas, and tahini dressing. V, GF</p></div></article>
+<h3 class="sub">Soups</h3>
+<article class="item"><span class="pic" aria-hidden="true">🍅</span><div><b>Tomato Basil Soup</b><em>$5.50</em><p>Slow-simmered and served with a toasted bread slice. V</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍲</span><div><b>Chicken Wild Rice Soup</b><em>$6.25</em><p>Creamy, hearty, and full of vegetables. A Midwest comfort classic. GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥕</span><div><b>Roasted Vegetable Soup</b><em>$5.75</em><p>Carrots, squash, and herbs, blended smooth. V, GF</p></div></article>
+</div>
+</section>
+
+<section class="cat" data-cat="sweet">
+<h2>🍰 Sweets</h2>
+<div class="items">
+<article class="item"><span class="pic" aria-hidden="true">🌀</span><div><b>Cardamom Roll</b><em>$4.00</em><p>Soft, sticky, and spiced. Baked each morning and gone by afternoon.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍪</span><div><b>Double Chocolate Cookie</b><em>$3.50</em><p>Crisp edges, gooey middle, and flaky sea salt on top.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍋</span><div><b>Lemon Blueberry Loaf</b><em>$4.25</em><p>Moist, bright, and finished with a sweet lemon glaze.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍫</span><div><b>Flourless Brownie</b><em>$3.75</em><p>Dense, fudgy, and made without wheat. GF</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🥮</span><div><b>Cinnamon Roll</b><em>$4.50</em><p>Warm, swirled, and topped with cream cheese icing.</p></div></article>
+<article class="item"><span class="pic" aria-hidden="true">🍞</span><div><b>Cranberry Orange Scone</b><em>$3.95</em><p>Buttery, crumbly, and studded with tart cranberries.</p></div></article>
+</div>
 </section>
 
 <section>
@@ -153,27 +180,5 @@ nav a{background:#f6f1ff;text-align:center}
 </nav>
 <small>3rd Space &bull; 218 Dubuque Street, Iowa City, Iowa &bull; Fictional address</small>
 </footer>
-
-<script>
-document.documentElement.classList.add('js');
-var t=document.getElementById('toggle'),n=document.getElementById('nav');
-t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o);});
-
-// Menu filter
-var btns=document.querySelectorAll('#filters .pill'),items=document.querySelectorAll('#items .card');
-btns.forEach(function(b){
-b.addEventListener('click',function(){
-btns.forEach(function(x){x.classList.remove('on')});
-b.classList.add('on');
-var f=b.dataset.filter,shown=0;
-items.forEach(function(c){
-var show=f==='all'||c.dataset.cat===f;
-c.classList.toggle('hide',!show);
-if(show)shown++;
-});
-document.getElementById('empty').classList.toggle('hide',shown>0);
-});
-});
-</script>
 </body>
 </html>
