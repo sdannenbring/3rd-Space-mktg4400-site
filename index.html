@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3rd Space | Coffee, Cafe &amp; Community in Iowa City</title>
+<meta name="description" content="3rd Space is a coffee shop, lunch spot, and community space in Iowa City.">
+<style>
+:root{--green:#19c37d;--blue:#2f80ff;--pink:#ff4fa3;--purple:#8a4dff;--ink:#1d1b3a;--bg:#fffaf3;--card:#ffffff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Trebuchet MS",Verdana,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{line-height:1.15;margin:0 0 .5rem}
+h1{font-size:clamp(2.2rem,7vw,4rem)}
+h2{font-size:clamp(1.6rem,4.5vw,2.4rem)}
+p{margin:0 0 1rem;overflow-wrap:break-word}
+a{color:var(--blue)}
+.notice{background:var(--ink);color:#fff;text-align:center;padding:.65rem 1rem;font-size:.85rem}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:5px solid var(--green);border-image:linear-gradient(90deg,var(--green),var(--blue),var(--purple),var(--pink)) 1}
+.bar{max-width:1100px;margin:0 auto;padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.logo{font-size:1.6rem;font-weight:800;text-decoration:none;color:var(--purple)}
+.logo span{color:var(--pink)}
+nav{display:flex;flex-wrap:wrap;gap:.4rem}
+nav a{text-decoration:none;color:var(--ink);font-weight:700;padding:.5rem .9rem;border-radius:999px;transition:.2s}
+nav a:nth-child(1):hover,nav a:nth-child(1)[aria-current]{background:var(--green);color:#fff}
+nav a:nth-child(2):hover,nav a:nth-child(2)[aria-current]{background:var(--blue);color:#fff}
+nav a:nth-child(3):hover,nav a:nth-child(3)[aria-current]{background:var(--purple);color:#fff}
+nav a:nth-child(4):hover,nav a:nth-child(4)[aria-current]{background:var(--pink);color:#fff}
+.toggle{display:none;background:var(--purple);color:#fff;border:0;border-radius:10px;padding:.5rem .9rem;font-size:1rem;font-weight:700;cursor:pointer}
+.hero{background:linear-gradient(135deg,var(--purple),var(--blue) 50%,var(--green));color:#fff;padding:3.5rem 1rem;text-align:center}
+.hero.pink{background:linear-gradient(135deg,var(--pink),var(--purple))}
+.hero.blue{background:linear-gradient(135deg,var(--blue),var(--green))}
+.hero.green{background:linear-gradient(135deg,var(--green),var(--blue))}
+.hero .in{max-width:760px;margin:0 auto}
+.hero p{font-size:1.15rem}
+.btn{display:inline-block;background:#fff;color:var(--purple);font-weight:800;text-decoration:none;padding:.8rem 1.5rem;border-radius:999px;border:0;cursor:pointer;font-size:1rem;margin:.25rem;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.2)}
+.btn.pinkbtn{background:var(--pink);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:2.5rem 1rem}
+section{margin-bottom:3rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.card{background:var(--card);border-radius:18px;padding:1.4rem;border-top:8px solid var(--green);box-shadow:0 4px 14px rgba(29,27,58,.1);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(29,27,58,.18)}
+.card:nth-child(4n+2){border-top-color:var(--blue)}
+.card:nth-child(4n+3){border-top-color:var(--purple)}
+.card:nth-child(4n+4){border-top-color:var(--pink)}
+.tag{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:#efe9ff;color:var(--purple);padding:.2rem .6rem;border-radius:999px;margin-bottom:.5rem}
+.price{float:right;font-weight:800;color:var(--pink)}
+.status{display:inline-block;background:#fff;color:var(--ink);padding:.4rem 1rem;border-radius:999px;font-weight:800;margin-top:.5rem}
+.dot{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;background:#aaa;margin-right:.4rem}
+.dot.open{background:var(--green)}
+.dot.closed{background:var(--pink)}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.pill{border:2px solid var(--purple);background:#fff;color:var(--purple);font-weight:800;padding:.5rem 1rem;border-radius:999px;cursor:pointer;font-size:.95rem;transition:.2s}
+.pill:hover{background:#efe9ff}
+.pill.on{background:var(--purple);color:#fff}
+.panel{background:#fff;border-radius:18px;padding:1.5rem;border-left:8px solid var(--pink);box-shadow:0 4px 14px rgba(29,27,58,.1)}
+.band{background:#fff;border-radius:22px;padding:1.5rem;box-shadow:0 4px 14px rgba(29,27,58,.1)}
+table{width:100%;border-collapse:collapse}
+td,th{text-align:left;padding:.6rem;border-bottom:2px solid #f0e8ff}
+.scroll{overflow-x:auto}
+footer{background:var(--ink);color:#fff;padding:2rem 1rem;text-align:center}
+footer .fn{max-width:760px;margin:0 auto 1rem;font-size:.9rem}
+footer nav{justify-content:center;margin-bottom:1rem}
+footer nav a{color:#fff}
+footer small{opacity:.8}
+.hide{display:none!important}
+@media(max-width:720px){
+.js .toggle{display:inline-block}
+.js nav{display:none;width:100%;flex-direction:column}
+.js nav.open{display:flex}
+nav a{background:#f6f1ff;text-align:center}
+.hero{padding:2.5rem 1rem}
+}
+</style>
+</head>
+<body>
+<div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+<header>
+<div class="bar">
+<a class="logo" href="index.html">3rd<span>Space</span></a>
+<button class="toggle" id="toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="index.html" aria-current="page">Home</a>
+<a href="events.html">Community Events</a>
+<a href="coffee.html">Best Coffee</a>
+<a href="menu.html">Menu</a>
+</nav>
+</div>
+</header>
+
+<div class="hero">
+<div class="in">
+<h1>Home is one place. Work is another. This is your third.</h1>
+<p>3rd Space is a coffee shop, lunch spot, and community living room in the heart of Iowa City. Come for the coffee, stay for the people.</p>
+<a class="btn" href="menu.html">See the Menu</a>
+<a class="btn pinkbtn" href="events.html">Find an Event</a>
+<div><span class="status" id="status"><span class="dot" id="dot"></span><span id="statusText">Checking hours...</span></span></div>
+</div>
+</div>
+
+<main>
+<section>
+<h2>Where would you like to start?</h2>
+<div class="grid">
+<div class="card"><span class="tag">Gather</span><h3>Community Events</h3><p>Open mics, language swaps, kids' story time, and study nights. There is something on almost every day of the week.</p><a href="events.html">Browse events &rarr;</a></div>
+<div class="card"><span class="tag">Sip</span><h3>Best Coffee Near You</h3><p>Small-batch beans roasted twice a week. Learn how we brew it and how to find us downtown.</p><a href="coffee.html">Meet our coffee &rarr;</a></div>
+<div class="card"><span class="tag">Eat</span><h3>The 3rd Space Menu</h3><p>Espresso drinks, fresh breakfast, hearty lunches, and bakery treats, with plenty of vegan and gluten-free options.</p><a href="menu.html">View the menu &rarr;</a></div>
+</div>
+</section>
+
+<section>
+<div class="band">
+<h2>What's your mood today?</h2>
+<p>Tap one and we'll suggest your next drink.</p>
+<div class="pills" id="moods">
+<button class="pill" data-mood="focus">Need to focus</button>
+<button class="pill" data-mood="cozy">Feeling cozy</button>
+<button class="pill" data-mood="fun">Want something fun</button>
+<button class="pill" data-mood="fresh">Need a refresh</button>
+</div>
+<div class="panel" id="moodResult" aria-live="polite"><strong>Waiting on your mood...</strong></div>
+</div>
+</section>
+
+<section>
+<h2>Meet the people behind the counter</h2>
+<div class="grid">
+<div class="card"><h3>Maya Okafor-Lindqvist</h3><p><strong>Founder.</strong> Maya spent ten years studying in coffee shops around the world and opened 3rd Space to build the one she always wished she could find: warm, welcoming, and open to everyone.</p></div>
+<div class="card"><h3>Theo Brandvold</h3><p><strong>Head Roaster.</strong> Theo roasts every batch in small lots and tastes each one before it reaches your cup. He is always happy to talk about tasting notes.</p></div>
+<div class="card"><h3>Priya Nandakumar</h3><p><strong>Community Host.</strong> Priya plans every event on our calendar and makes sure that new faces feel like regulars by the end of the night.</p></div>
+</div>
+</section>
+
+<section>
+<h2>What our neighbors say</h2>
+<div class="grid">
+<div class="card"><p>"I wrote half of my thesis at the big purple table. The staff learned my order in a week."</p><strong>Jordan, graduate student</strong></div>
+<div class="card"><p>"Our book club moved here and never left. The lavender latte is dangerous."</p><strong>Denise, local teacher</strong></div>
+<div class="card"><p>"Open mic night made me brave enough to play my own songs. Thanks, 3rd Space."</p><strong>Marcus, first-time performer</strong></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="fn">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+<nav aria-label="Footer">
+<a href="index.html">Home</a>
+<a href="events.html">Community Events</a>
+<a href="coffee.html">Best Coffee</a>
+<a href="menu.html">Menu</a>
+</nav>
+<small>3rd Space &bull; 218 Dubuque Street, Iowa City, Iowa &bull; Fictional address</small>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+var t=document.getElementById('toggle'),n=document.getElementById('nav');
+t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o);});
+
+// Open-now status
+(function(){
+var h={0:[8,18],1:[6.5,20],2:[6.5,20],3:[6.5,20],4:[6.5,20],5:[6.5,20],6:[7,21]};
+var d=new Date(),hr=d.getHours()+d.getMinutes()/60,r=h[d.getDay()];
+var open=hr>=r[0]&&hr<r[1];
+document.getElementById('dot').className='dot '+(open?'open':'closed');
+document.getElementById('statusText').textContent=open?'Open now. Come on in!':'Closed right now. See hours on our Best Coffee page.';
+})();
+
+// Mood picker
+var picks={
+focus:'<strong>Double Espresso Cortado.</strong> Strong, smooth, and small enough to sip while you work. Pair it with an everything bagel.',
+cozy:'<strong>Lavender Honey Latte.</strong> Warm, floral, and gently sweet. Perfect with a cardamom roll by the window.',
+fun:'<strong>Unicorn Cold Foam Cold Brew.</strong> Pink vanilla foam on top of our smooth cold brew. Yes, it is as pretty as it sounds.',
+fresh:'<strong>Blueberry Mint Lemonade.</strong> Bright, cold, and caffeine-free. It is a sunny day in a cup.'
+};
+document.querySelectorAll('#moods .pill').forEach(function(b){
+b.addEventListener('click',function(){
+document.querySelectorAll('#moods .pill').forEach(function(x){x.classList.remove('on')});
+b.classList.add('on');
+document.getElementById('moodResult').innerHTML=picks[b.dataset.mood];
+});
+});
+</script>
+</body>
+</html>
