@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Coffee Near Me | 3rd Space Iowa City</title>
+<meta name="description" content="Looking for the best coffee near you in Iowa City? 3rd Space roasts small-batch coffee twice a week and serves it downtown.">
+<style>
+:root{--green:#19c37d;--blue:#2f80ff;--pink:#ff4fa3;--purple:#8a4dff;--ink:#1d1b3a;--bg:#fffaf3;--card:#ffffff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Trebuchet MS",Verdana,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{line-height:1.15;margin:0 0 .5rem}
+h1{font-size:clamp(2.2rem,7vw,4rem)}
+h2{font-size:clamp(1.6rem,4.5vw,2.4rem)}
+p{margin:0 0 1rem;overflow-wrap:break-word}
+a{color:var(--blue)}
+.notice{background:var(--ink);color:#fff;text-align:center;padding:.65rem 1rem;font-size:.85rem}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:5px solid var(--green);border-image:linear-gradient(90deg,var(--green),var(--blue),var(--purple),var(--pink)) 1}
+.bar{max-width:1100px;margin:0 auto;padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.logo{font-size:1.6rem;font-weight:800;text-decoration:none;color:var(--purple)}
+.logo span{color:var(--pink)}
+nav{display:flex;flex-wrap:wrap;gap:.4rem}
+nav a{text-decoration:none;color:var(--ink);font-weight:700;padding:.5rem .9rem;border-radius:999px;transition:.2s}
+nav a:nth-child(1):hover,nav a:nth-child(1)[aria-current]{background:var(--green);color:#fff}
+nav a:nth-child(2):hover,nav a:nth-child(2)[aria-current]{background:var(--blue);color:#fff}
+nav a:nth-child(3):hover,nav a:nth-child(3)[aria-current]{background:var(--purple);color:#fff}
+nav a:nth-child(4):hover,nav a:nth-child(4)[aria-current]{background:var(--pink);color:#fff}
+.toggle{display:none;background:var(--purple);color:#fff;border:0;border-radius:10px;padding:.5rem .9rem;font-size:1rem;font-weight:700;cursor:pointer}
+.hero{background:linear-gradient(135deg,var(--purple),var(--blue) 50%,var(--green));color:#fff;padding:3.5rem 1rem;text-align:center}
+.hero.pink{background:linear-gradient(135deg,var(--pink),var(--purple))}
+.hero.blue{background:linear-gradient(135deg,var(--blue),var(--green))}
+.hero.green{background:linear-gradient(135deg,var(--green),var(--blue))}
+.hero .in{max-width:760px;margin:0 auto}
+.hero p{font-size:1.15rem}
+.btn{display:inline-block;background:#fff;color:var(--purple);font-weight:800;text-decoration:none;padding:.8rem 1.5rem;border-radius:999px;border:0;cursor:pointer;font-size:1rem;margin:.25rem;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.2)}
+.btn.pinkbtn{background:var(--pink);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:2.5rem 1rem}
+section{margin-bottom:3rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.card{background:var(--card);border-radius:18px;padding:1.4rem;border-top:8px solid var(--green);box-shadow:0 4px 14px rgba(29,27,58,.1);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(29,27,58,.18)}
+.card:nth-child(4n+2){border-top-color:var(--blue)}
+.card:nth-child(4n+3){border-top-color:var(--purple)}
+.card:nth-child(4n+4){border-top-color:var(--pink)}
+.tag{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:#efe9ff;color:var(--purple);padding:.2rem .6rem;border-radius:999px;margin-bottom:.5rem}
+.price{float:right;font-weight:800;color:var(--pink)}
+.status{display:inline-block;background:#fff;color:var(--ink);padding:.4rem 1rem;border-radius:999px;font-weight:800;margin-top:.5rem}
+.dot{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;background:#aaa;margin-right:.4rem}
+.dot.open{background:var(--green)}
+.dot.closed{background:var(--pink)}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.pill{border:2px solid var(--purple);background:#fff;color:var(--purple);font-weight:800;padding:.5rem 1rem;border-radius:999px;cursor:pointer;font-size:.95rem;transition:.2s}
+.pill:hover{background:#efe9ff}
+.pill.on{background:var(--purple);color:#fff}
+.panel{background:#fff;border-radius:18px;padding:1.5rem;border-left:8px solid var(--pink);box-shadow:0 4px 14px rgba(29,27,58,.1)}
+.band{background:#fff;border-radius:22px;padding:1.5rem;box-shadow:0 4px 14px rgba(29,27,58,.1)}
+table{width:100%;border-collapse:collapse}
+td,th{text-align:left;padding:.6rem;border-bottom:2px solid #f0e8ff}
+.scroll{overflow-x:auto}
+footer{background:var(--ink);color:#fff;padding:2rem 1rem;text-align:center}
+footer .fn{max-width:760px;margin:0 auto 1rem;font-size:.9rem}
+footer nav{justify-content:center;margin-bottom:1rem}
+footer nav a{color:#fff}
+footer small{opacity:.8}
+.hide{display:none!important}
+@media(max-width:720px){
+.js .toggle{display:inline-block}
+.js nav{display:none;width:100%;flex-direction:column}
+.js nav.open{display:flex}
+nav a{background:#f6f1ff;text-align:center}
+.hero{padding:2.5rem 1rem}
+}
+</style>
+</head>
+<body>
+<div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+<header>
+<div class="bar">
+<a class="logo" href="index.html">3rd<span>Space</span></a>
+<button class="toggle" id="toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="events.html">Community Events</a>
+<a href="coffee.html" aria-current="page">Best Coffee</a>
+<a href="menu.html">Menu</a>
+</nav>
+</div>
+</header>
+
+<div class="hero pink">
+<div class="in">
+<h1>The Best Coffee Near You, Roasted Right Here</h1>
+<p>Searching for great coffee in downtown Iowa City? Theo roasts our beans in small batches twice a week, so every cup is fresh, smooth, and full of flavor.</p>
+<span class="status"><span class="dot" id="dot"></span><span id="statusText">Checking hours...</span></span>
+</div>
+</div>
+
+<main>
+<section>
+<h2>Why people call it the best</h2>
+<div class="grid">
+<div class="card"><h3>Roasted twice a week</h3><p>Coffee is at its best within a few weeks of roasting. Ours rarely sits on a shelf for more than a few days.</p></div>
+<div class="card"><h3>Fairly sourced</h3><p>We buy directly from farming cooperatives in Colombia, Ethiopia, and Guatemala, and we pay above fair-trade minimums.</p></div>
+<div class="card"><h3>Made by people who care</h3><p>Our baristas train for six weeks before serving a single customer. Every drink is weighed, timed, and tasted.</p></div>
+<div class="card"><h3>Plenty of options</h3><p>Oat, almond, soy, and whole milk are all available. Decaf is roasted in-house, too.</p></div>
+</div>
+</section>
+
+<section>
+<div class="band">
+<h2>Find your perfect brew</h2>
+<p>Pick a style to see what it tastes like and what we recommend.</p>
+<div class="pills" id="brews">
+<button class="pill" data-brew="pour">Pour-Over</button>
+<button class="pill" data-brew="espresso">Espresso</button>
+<button class="pill" data-brew="cold">Cold Brew</button>
+<button class="pill" data-brew="drip">Batch Drip</button>
+</div>
+<div class="panel" id="brewResult" aria-live="polite"><strong>Choose a brew style above.</strong></div>
+</div>
+</section>
+
+<section>
+<h2>Our beans</h2>
+<div class="band scroll">
+<table>
+<thead><tr><th>Bean</th><th>Origin</th><th>Tastes like</th><th>Roast</th></tr></thead>
+<tbody>
+<tr><td><strong>Sunrise Blend</strong></td><td>Colombia and Guatemala</td><td>Milk chocolate, toasted almond</td><td>Medium</td></tr>
+<tr><td><strong>Blueberry Hill</strong></td><td>Ethiopia</td><td>Blueberry, jasmine, honey</td><td>Light</td></tr>
+<tr><td><strong>Purple Night</strong></td><td>Sumatra</td><td>Dark cocoa, cedar, brown sugar</td><td>Dark</td></tr>
+<tr><td><strong>Easy Evening Decaf</strong></td><td>Mexico</td><td>Caramel, soft citrus</td><td>Medium</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin-top:1rem">Take a bag home. Whole bean or ground to your brewer, 12 ounces for $15.</p>
+</section>
+
+<section>
+<h2>Find us and visit</h2>
+<div class="grid">
+<div class="card"><h3>Address</h3><p>3rd Space<br>218 Dubuque Street<br>Iowa City, Iowa<br><em>(fictional address)</em></p><p>We're a short walk from downtown shops, bus stops, and bike racks. Free Wi-Fi inside.</p></div>
+<div class="card"><h3>Hours</h3><p>Monday to Friday: 6:30 AM to 8:00 PM<br>Saturday: 7:00 AM to 9:00 PM<br>Sunday: 8:00 AM to 6:00 PM</p></div>
+<div class="card"><h3>Getting here</h3><p>Walking or biking? Use the racks by our front door. Driving? Metered street parking is nearby, and a city garage is two blocks away.</p></div>
+</div>
+<p style="margin-top:1.5rem"><a class="btn pinkbtn" href="menu.html">See what to order</a></p>
+</section>
+</main>
+
+<footer>
+<div class="fn">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+<nav aria-label="Footer">
+<a href="index.html">Home</a>
+<a href="events.html">Community Events</a>
+<a href="coffee.html">Best Coffee</a>
+<a href="menu.html">Menu</a>
+</nav>
+<small>3rd Space &bull; 218 Dubuque Street, Iowa City, Iowa &bull; Fictional address</small>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+var t=document.getElementById('toggle'),n=document.getElementById('nav');
+t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o);});
+
+// Open-now status
+(function(){
+var h={0:[8,18],1:[6.5,20],2:[6.5,20],3:[6.5,20],4:[6.5,20],5:[6.5,20],6:[7,21]};
+var d=new Date(),hr=d.getHours()+d.getMinutes()/60,r=h[d.getDay()];
+var open=hr>=r[0]&&hr<r[1];
+document.getElementById('dot').className='dot '+(open?'open':'closed');
+document.getElementById('statusText').textContent=open?'Open now. Come on in!':'Closed right now. See hours below.';
+})();
+
+// Brew picker
+var brews={
+pour:'<strong>Pour-Over, $4.50.</strong> Clean, bright, and full of detail. We recommend <em>Blueberry Hill</em>. It takes about four minutes, and it is worth it.',
+espresso:'<strong>Espresso, $3.25.</strong> Rich, syrupy, and bold. Pulled on <em>Sunrise Blend</em> with notes of chocolate and almond. Add milk for a latte or cortado.',
+cold:'<strong>Cold Brew, $4.75.</strong> Steeped for 18 hours. Smooth, low acid, and naturally sweet. Made with <em>Purple Night</em> for a deep, cocoa-like finish.',
+drip:'<strong>Batch Drip, $3.00.</strong> Our everyday cup, with free refills for the first hour if you stay and sit. Brewed fresh every 30 minutes.'
+};
+document.querySelectorAll('#brews .pill').forEach(function(b){
+b.addEventListener('click',function(){
+document.querySelectorAll('#brews .pill').forEach(function(x){x.classList.remove('on')});
+b.classList.add('on');
+document.getElementById('brewResult').innerHTML=brews[b.dataset.brew];
+});
+});
+</script>
+</body>
+</html>
