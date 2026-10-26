@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sdannenbring.github.io/3rd-Space-mktg4400-site/sitemap.xml
